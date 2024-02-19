@@ -1,16 +1,9 @@
-// TinderCard.js
-
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import SwipeCards from "react-native-swipe-cards";
 
 const Card = ({ text, color, onYup, onNope }) => (
-  <View style={[styles.card, { backgroundColor: color }]}>
-    <View style={styles.imageContainer}>
-      <Image source={require("../assets/nope.png")} style={styles.image} />
-      <Image source={require("../assets/yup.png")} style={styles.image} />
-    </View>
-  </View>
+  <View style={[styles.card, { backgroundColor: color }]} />
 );
 
 const TinderCard = ({ data, handleYup, handleNope }) => (
@@ -25,21 +18,29 @@ const TinderCard = ({ data, handleYup, handleNope }) => (
       renderCard={(cardData) => (
         <Card {...cardData} onYup={handleYup} onNope={handleNope} />
       )}
-      renderNoMoreCards={() => <Text>No more cards</Text>}
       handleYup={(card) => {
         handleYup(card);
-        // You can perform additional actions on Yup, like showing an image
       }}
       handleNope={(card) => {
         handleNope(card);
-        // You can perform additional actions on Nope, like showing an image
       }}
-      yupText="Yup"
-      noText="Nope"
+      renderNoMoreCards={() => <Text>No more cards</Text>}
       stack={true}
+      yupView={
+        <Image source={require("../assets/yup.png")} style={styles.image} />
+      }
+      noView={
+        <Image source={require("../assets/nope.png")} style={styles.image} />
+      }
+      yupStyle={{
+        borderWidth: 0,
+        justifyContent: "start",
+      }}
+      nopeStyle={{ borderWidth: 0, justifyContent: "start" }}
       stackDepth={3}
       stackOffsetX={1}
       stackOffsetY={15}
+      loop
     />
   </View>
 );

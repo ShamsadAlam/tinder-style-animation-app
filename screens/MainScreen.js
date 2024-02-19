@@ -1,5 +1,3 @@
-// MainScreen.js
-
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import TinderCard from "../components/TinderCard";
@@ -16,12 +14,10 @@ const MainScreen = () => {
   ]);
 
   const handleYup = (card) => {
-    // Handle right swipe action
     console.log("Right swipe!", card);
   };
 
   const handleNope = (card) => {
-    // Handle left swipe action
     console.log("Left swipe!", card);
   };
 
