@@ -4,7 +4,8 @@ import TinderCard from "../components/TinderCard";
 
 const MainScreen = () => {
   const [data, setData] = useState([
-    { text: "Card 1", color: "#FCD689" },
+    { text: "Card 1", color: "#92CDF3" },
+    { text: "Card 1", color: "#80E7BA" },
     { text: "Card 2", color: "#D08B63" },
     { text: "Card 3", color: "#C35D66" },
     { text: "Card 3", color: "#2dd36f" },
